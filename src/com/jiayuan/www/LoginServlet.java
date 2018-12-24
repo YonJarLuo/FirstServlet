@@ -21,17 +21,20 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("请求post成功");
         String user = request.getParameter("user");
         String password = request.getParameter("password");
         if ("luoyj".equals(user) && "123456".equals(password)){
             //重定向，跳到欢迎界面
-            System.out.println("进来doPost，密码正确");
-            response.sendRedirect("/welcome.html");
+            System.out.println("密码正确");
+            response.sendRedirect("/FirstServlet/welcome.html");    //把项目的war放到Tomcat的webapps目录下时，此处需使用绝对路径
+//            response.sendRedirect("/welcome.html");
         }else{
             //另一种重定向
-            System.out.println("进来doPost，密码不正确");
+            System.out.println("密码不正确");
             response.setStatus(302);
-            response.setHeader("Location","/login.html");
+            response.setHeader("Location","/FirstServlet/login.html");   //把项目的war放到Tomcat的webapps目录下时，此处需使用绝对路径
+//            response.setHeader("Location","/login.html");
         }
     }
 }
