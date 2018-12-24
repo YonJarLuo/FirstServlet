@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             //另一种重定向
             System.out.println("密码不正确");
             response.setStatus(302);
-            response.setHeader("Location","/FirstServlet/login.html");   //把项目的war放到Tomcat的webapps目录下时，此处需使用绝对路径
+            response.setHeader("Location","/FirstServlet/login.html");
 //            response.setHeader("Location","/login.html");
         }
     }
