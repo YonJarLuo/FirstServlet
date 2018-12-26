@@ -1,4 +1,4 @@
-package com.jiayuan.www;
+package com.jiayuan.www.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
