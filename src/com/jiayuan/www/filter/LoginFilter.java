@@ -43,7 +43,7 @@ public class LoginFilter implements Filter{
         //截取 去掉项目名
         String targetURL = currentURL.substring(currentURL.indexOf("/",1),currentURL.length());
         System.out.println("targetURL:"+targetURL);
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
 
         if(!"/login.html".equals(targetURL)){  //如果请求的路径不是login.html，则需要判断是否登录
             System.out.println(session.getAttribute("user"));
